@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>HOTELS</title>
+</head>
+ 
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#" class="nav-link"><span class="fa fa-home"></span> Home</a>
+                    </li>
+                    
+                <span class="navbar-text">
+                    <a class="btn btn-block btn-sm" id="loginClick">
+                        <span class="fa fa-sign-in"></span>Login
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+ 
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                   placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1"
+                                   id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                               data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="modal fade" id="reserve" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Reserve a Table
+                    </h4>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group form-row">
+                            <label for="" class="col-sm-2 form-label h6">Number of Guests</label>
+                            <div class="col-auto">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests1" class="form-check-input">
+                                    <label for="guests1" class="form-check-label"> 1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests2" class="form-check-input">
+                                    <label for="guests2" class="form-check-label"> 2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests3" class="form-check-input">
+                                    <label for="guests3" class="form-check-label"> 3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests4" class="form-check-input">
+                                    <label for="guests4" class="form-check-label"> 4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests5" class="form-check-input">
+                                    <label for="guests5" class="form-check-label"> 5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="guests" id="guests6" class="form-check-input">
+                                    <label for="guests6" class="form-check-label"> 6</label>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="form-row form-group">
+                            <label for="smok" class="form-label col-sm-2 h6">Section</label>
+                            <div class="btn-group btn-group-toggle" id="smok" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                    <input type="radio" name="smok" id="nonsmoking"> Non-Smoking
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" name="smok" id="smoking"> Smoking
+                                </label>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group form-row">
+                            <label for="date" class="form-label col-sm-2 h6">Date and Time</label>
+                            <input type="text" onfocus="(this.type='date')" id="date" class="form-control col-sm-3 mr-4"
+                               placeholder="Date">
+                            <input type="text" onfocus="(this.type='time')" id="time" class="form-control col-sm-3 mr-4"
+                               placeholder="Time">
+                        </div>
+ 
+                        <div class="form-group form-row">
+                            <input type="button" value="Cancel" class="btn btn-secondary offset-sm-2"
+                               data-dismiss="modal">
+                            <input type="submit" value="Reserve" class="btn btn-primary ml-1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>HOTELS</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
+                        lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <img src="data:image/jpeg;base64,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" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <a class="btn btn-block btn-sm btn-warning" id="reserveClick">
+                        Reserve Table</a>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+    <div class="container">
+         <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcontent.jdmagicbox.com%2Fcomp%2Fsurendra-nagar-gujarat%2Fs9%2F9999p2752.2752.170216140745.k1s9%2Fcatalogue%2Fhotel-cross-roads-halvad-surendra-nagar-gujarat-hotels-16l7xip.jpg&imgrefurl=https%3A%2F%2Fwww.justdial.com%2FSurendra-Nagar-Gujarat%2FHotel-Cross-Roads-Halvad%2F9999P2752-2752-170216140745-K1S9_BZDET&tbnid=UyqcNVaiMhWqqM&vet=12ahUKEwitnen8gYPvAhVpDLcAHevZB1UQMygAegUIARCxAQ..i&docid=IRLR7Kzq-0qmXM&w=688&h=678&q=cross%20roads%20hotesls&ved=2ahUKEwitnen8gYPvAhVpDLcAHevZB1UQMygAegUIARCxAQ" alt="Uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>CROSSROADS</h2>
+                                <h2>CROSSROADS<span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
+                                    pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur
+                                    chillies and Buffalo Paneer.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcontent.jdmagicbox.com%2Fcomp%2Fsurendra-nagar-gujarat%2Fs9%2F9999p2752.2752.170216140745.k1s9%2Fcatalogue%2Fhotel-cross-roads-halvad-surendra-nagar-gujarat-hotels-16l7xip.jpg&imgrefurl=https%3A%2F%2Fwww.justdial.com%2FSurendra-Nagar-Gujarat%2FHotel-Cross-Roads-Halvad%2F9999P2752-2752-170216140745-K1S9_BZDET&tbnid=UyqcNVaiMhWqqM&vet=12ahUKEwitnen8gYPvAhVpDLcAHevZB1UQMygAegUIARCxAQ..i&docid=IRLR7Kzq-0qmXM&w=688&h=678&q=cross%20roads%20hotesls&ved=2ahUKEwitnen8gYPvAhVpDLcAHevZB1UQMygAegUIARCxAQ" alt="Uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="mt-0">SEVEN DAYS <span class="badge badge-danger">NEW</span></h2>
+                         <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five
+                            different salads, six enticing appetizers, six main entrees and five choicest desserts. Free
+                            flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                            </div>
+                        </div>
+                        <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International
+                            experience having worked closely with whos-who in the culinary world, he specializes in
+                            creating mouthwatering Indo-Italian fusion experiences. </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                   
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        
+                
+       
+
+
+                </div>
+
+                
+ 
+             </div>
+        </div>
+  
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                  
+                    <div class="media-body">
+                        <h2 class="mt-0"> <span class="badge badge-danger">HOT</span> <span
+                               class="badge span-pill badge-secondary">$4.99</span></h2>
+                        <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
+                            pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur
+                            chillies and Buffalo Paneer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+ 
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
+                <h3>This Month's Promotions</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                        <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five
+                            different salads, six enticing appetizers, six main entrees and five choicest desserts. Free
+                            flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/cjs/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+ 
+</html>
